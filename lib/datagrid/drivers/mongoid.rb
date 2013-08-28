@@ -7,7 +7,7 @@ module Datagrid
         if scope.is_a?(Class) 
           scope.ancestors.include?(::Mongoid::Document)
         else
-          scope.is_a?(::Mongoid::Criteria)
+          scope.is_a?(::Mongoid::Criteria) || scope.is_a?(::Mongoid::Contextual::TextSearch)
         end
       end
 
